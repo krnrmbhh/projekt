@@ -1,0 +1,24 @@
+{
+  "name": "projekt",
+  "version": "1.0.0",
+  "description": "2026 aasta veebiprogrammeerimise andmeanalüütika grupi esimene projekt. See on esimene projekt, lihtsalt node.Js abil lihtsaim veebiserver.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krnrmbhh/projekt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krnrmbhh/projekt/issues"
+  },
+  "homepage": "https://github.com/krnrmbhh/projekt#readme",
+  "dependencies": {
+    "ejs": "^7.0.1",
+    "express": "^5.2.1"
+  }
+}

@@ -1,7 +1,9 @@
 const express = require('express');
-const dateET = require('./src/dateTimeET');
 const fs = require('fs').promises;
 const bodyparser = require('body-parser');
+//moodul andmebaasiga suhtlemiseks, koos async võimalustega
+const mysql = require('mysql2/promise');
+const dateET = require('./src/dateTimeET');
 
 const textRef = 'public/txt/vanasonad.txt';
 const regTextRef = 'public/txt/visits.txt';
@@ -51,6 +53,33 @@ app.post('/regvisit', async (req, res)=>{
 		console.log(err);
 		res.render('regvisit');
 	}	
+});
+
+app.get('/eestifilm', (req, res)=>{
+	res.render('eestifilm');
+});
+
+app.get('/eestifilm/film_inimesed', (req, res)=>{
+	let conn;
+	try {
+		conn = await mysql.createConnection({
+			host: 'localhost', 
+			user: 'if26'
+			password: 'ifikas26'
+			database: 'if26_karina_rumbahh_AA'
+		});
+		//defineerimine SQL päringu
+		let sqlReq = 'SELECT * FROM person';
+		//käivitame päringu
+		const [sqlRes] = await conn.execute(sqlReq);
+		console.log(sqlRes);
+		res.render('film_inimesed');
+	}
+	catch (err) {
+		console.log('Andmebaasiga suhtlemise viga: ' + err);
+		res.render('film_inimesed');
+	}
+	
 });
 
 app.listen(5322);

@@ -16,16 +16,20 @@
 	<h2>Lisa filmiinimene</h2>
 	<form method="POST">
 		<label for="firstNameInput">Filmiinimese eesnimi</label>
-		<input id="firstNameInput" name="firstNameInput" type="text" placeholder="Eesnimi">
+		<input id="firstNameInput" name="firstNameInput" type="text" placeholder="Eesnimi" value="<%= firstName %>">
+		<span style="color: red;"><%= errors.firstName || '' %></span>
 		<br>
 		<label for="lastNameInput">Filmiinimese perekonnanimi</label>
-		<input id="lastNameInput" name="lastNameInput" type="text" placeholder="Perekonnanimi">
+		<input id="lastNameInput" name="lastNameInput" type="text" placeholder="Perekonnanimi" value="<%= lastName %>">
+		<span style="color: red;"><%= errors.lastName || '' %></span>
 		<br>
 		<label for="bornInput">Filmiinimese sünnikuupäev</label>
-		<input id="bornInput" name="bornInput" type="date">
+		<input id="bornInput" name="bornInput" type="date" value="<%= born %>">
+		<span style="color: red;"><%= errors.born || '' %></span>
 		<br>
 		<label for="deceasedInput">Filmiinimese surmakuupäev</label>
-		<input id="deceasedInput" name="deceasedInput" type="date">
+		<input id="deceasedInput" name="deceasedInput" type="date" value="<%= deceased %>">
+		<span style="color: red;"><%= errors.deceased || '' %></span>
 		<br>
 		<input id="personSubmit" name="personSubmit" type="submit" value="Salvesta">
 	</form>

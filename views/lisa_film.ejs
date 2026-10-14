@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+	<meta charset="utf-8">
+	<title>Karina Rumbahh, veebiprogrammeerimine</title>
+</head>
+<body>
+	<img src="../pic/veebiprogrammeerimine_2026_AA.png" alt="banner">
+	<h1>Eesti film</h1>
+	<p>Siin saab lisada Eesti filme.</p>
+	<ul>
+		<li><a href="/">Avalehele</a></li>
+		<li><a href="/eestifilm">Eesti filmi avalehele</a></li>
+	</ul>
+	<hr>
+	<h2>Lisa film</h2>
+	<form method="POST">
+		<label for="titleInput">Filmi pealkiri</label>
+		<input id="titleInput" name="titleInput" type="text" placeholder="Pealkiri" value="<%= title %>">
+		<span style="color: red;"><%= errors.title || '' %></span>
+		<br>
+		<label for="productionYearInput">Valmimisaasta</label>
+		<input id="productionYearInput" name="productionYearInput" type="number" min="1895" placeholder="Aasta" value="<%= productionYear %>">
+		<span style="color: red;"><%= errors.productionYear || '' %></span>
+		<br>
+		<label for="durationInput">Kestus (minutites)</label>
+		<input id="durationInput" name="durationInput" type="number" min="1" placeholder="Minutid" value="<%= duration %>">
+		<span style="color: red;"><%= errors.duration || '' %></span>
+		<br>
+		<label for="descriptionInput">Kirjeldus</label>
+		<br>
+		<textarea id="descriptionInput" name="descriptionInput" rows="4" cols="40" placeholder="Filmi kirjeldus"><%= description %></textarea>
+		<br>
+		<input id="movieSubmit" name="movieSubmit" type="submit" value="Salvesta">
+	</form>
+	<p><%= notice %></p>
+</body>
+</html>

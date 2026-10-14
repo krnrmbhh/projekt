@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+	<meta charset="utf-8">
+	<title>Karina Rumbahh, veebiprogrammeerimine</title>
+</head>
+<body>
+	<img src="../pic/veebiprogrammeerimine_2026_AA.png" alt="banner">
+	<h1>Eesti film</h1>
+	<p>Siin saab lisada filmiga seotud ameteid.</p>
+	<ul>
+		<li><a href="/">Avalehele</a></li>
+		<li><a href="/eestifilm">Eesti filmi avalehele</a></li>
+	</ul>
+	<hr>
+	<h2>Lisa amet</h2>
+	<form method="POST">
+		<label for="positionNameInput">Ametinimetus</label>
+		<input id="positionNameInput" name="positionNameInput" type="text" placeholder="Ametinimetus" value="<%= positionName %>">
+		<span style="color: red;"><%= errors.positionName || '' %></span>
+		<br>
+		<label for="descriptionInput">Kirjeldus</label>
+		<br>
+		<textarea id="descriptionInput" name="descriptionInput" rows="4" cols="40" placeholder="Ameti kirjeldus"><%= description %></textarea>
+		<br>
+		<input id="positionSubmit" name="positionSubmit" type="submit" value="Salvesta">
+	</form>
+	<p><%= notice %></p>
+</body>
+</html>

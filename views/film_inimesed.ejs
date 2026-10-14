@@ -5,7 +5,7 @@
 	<title>Karina Rumbahh, veebiprogrammeerimine</title>
 </head>
 <body>
-	<img src="pic/veebiprogrammeerimine_2026_AA.png" alt="banner">
+	<img src="../pic/veebiprogrammeerimine_2026_AA.png" alt="banner">
 	<h1>Eesti film</h1>
 	<p>Siit leiab infot Eesti filmidega seotud inimeste kohta.</p>
 	<ul>
@@ -15,7 +15,7 @@
 	<hr>
 	<h2>Siit andmebaasist leitavad filmiinimesed</h2>
 	<ol>
-		<% personList.forEach(function(person){ %>}
+		<% personList.forEach(function(person){ %>
 		<li><%= person.first_name%> <%= person.last_name %>, sündinud <%= person.born %>.</li>
 		<% }); %>
 	</ol>

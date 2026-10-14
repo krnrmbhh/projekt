@@ -57,11 +57,14 @@ app.post('/regvisit', async (req, res)=>{
 	}	
 });
 
-app.get('/eestifilm', (req, res)=>{
-	res.render('eestifilm');
-});
+const eestifilmRouter = require('./routes/eestifilmRoutes');
+app.use('/eestifilm', eestifilmRouter);
 
-app.get('/eestifilm/film_inimesed', async (req, res)=>{
+/* app.get('/eestifilm', (req, res)=>{
+	res.render('eestifilm');
+}); */
+
+/* app.get('/eestifilm/film_inimesed', async (req, res)=>{
 	let conn;
 	try {
 		conn = await mysql.createConnection({
@@ -86,13 +89,13 @@ app.get('/eestifilm/film_inimesed', async (req, res)=>{
 			await conn.end();
 		}
 	}
-});
+}); */
 
-app.get('/eestifilm/lisa_film_inimesed', (req, res)=>{
+/* app.get('/eestifilm/lisa_film_inimesed', (req, res)=>{
 	res.render('lisa_film_inimesed', {notice: 'Ootan sisestust!'});
-});
+}); */
 
-app.post('/eestifilm/lisa_film_inimesed', async (req, res)=>{
+/* app.post('/eestifilm/lisa_film_inimesed', async (req, res)=>{
 	console.log(req.body);
 	//kontrollime andmeid, teeme kõige lahjema kontrolli
 	let deceasedDate = null;
@@ -135,6 +138,6 @@ app.post('/eestifilm/lisa_film_inimesed', async (req, res)=>{
 		}
 	}
 	
-});
+}); */
 
 app.listen(5322);

@@ -146,7 +146,7 @@ const eestifilmInimesedLisaPost = async (req, res) => {
 			password: process.env.DB_PASS,
 			database: process.env.DB_DATABASE
 		});
-		let sqlReq = 'INSERT INTO person (first_name, last_name, born, diceased) VALUES (?,?,?,?)';
+		let sqlReq = 'INSERT INTO person (first_name, last_name, born, deceased) VALUES (?,?,?,?)';
 		await conn.execute(sqlReq, [
 			firstName,
 			lastName,
@@ -253,7 +253,7 @@ const eestifilmFilmLisaPost = async (req, res) => {
 			password: process.env.DB_PASS,
 			database: process.env.DB_DATABASE
 		});
-		let sqlReq = 'INSERT INTO movie (title, production_year, duration, description) VALUES (?,?,?,?)';
+		let sqlReq = 'INSERT INTO movie (title, release_year, duration_minutes, description) VALUES (?,?,?,?)';
 		await conn.execute(sqlReq, [
 			title,
 			productionYear,
@@ -330,7 +330,7 @@ const eestifilmAmetLisaPost = async (req, res) => {
 			password: process.env.DB_PASS,
 			database: process.env.DB_DATABASE
 		});
-		let sqlReq = 'INSERT INTO `position` (position_name, description) VALUES (?,?)';
+		let sqlReq = 'INSERT INTO profession (title, description) VALUES (?,?)';
 		await conn.execute(sqlReq, [
 			positionName,
 			description.trim() !== '' ? description : null

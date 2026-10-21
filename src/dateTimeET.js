@@ -22,10 +22,10 @@ const timeFormattedET = function(){
 	return hourNow + ':' + addLeadZero(minuteNow) + ':' + addLeadZero(secondNow);
 }
 
-const weekdayET = function(){
+const weekDayET = function(){
 	let weekDay = new Date().getDay();
 	const weekdayNamesET = ['pühapäev', 'esmaspäev', "teisipäev", 'kolmapäev', 'neljapäev', 'reede', 'laupäev'];
 	return weekdayNamesET[weekDay];
 }
 
-module.exports = {dateET: dateFormattedET, timeET: timeFormattedET, dayET: weekdayET}
+module.exports = {dateET: dateFormattedET, timeET: timeFormattedET, weekDayET: weekDayET}

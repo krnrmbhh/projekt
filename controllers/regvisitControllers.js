@@ -1,4 +1,4 @@
-const dateTimeET = require('../public/src/dateTimeET.js');
+const dateTimeET = require('../src/dateTimeET.js');
 const fs = require('fs').promises
 const registervisit =(req, res)=>{
     res.render('regvisit')

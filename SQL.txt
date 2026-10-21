@@ -1,0 +1,2 @@
+Uusima kindla privaatsusega foto
+SELECT filename, alttext FROM tabelinimi WHERE id=(SELECT MAX(id) FROM tabelinimi WHERE privacy=? AND deleted IS NULL);

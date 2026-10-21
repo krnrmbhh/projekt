@@ -1,6 +1,6 @@
 const express = require('express')
-const dateTimeET = require('./public/src/dateTimeET.js');
-const bodyparser = require('body-parser')
+const dateTimeET = require('./src/dateTimeET.js');
+const bodyparser = require('body-parser');
 require('dotenv').config() // moodul keskkonna muutujate lugemiseks
 //käivitan express() funktsiooni ja tähistan töötava asja nimega "app"
 const app = express()
@@ -10,8 +10,8 @@ app.set('view engine', 'ejs')
 
 //muudan "public" veebiserverile kättesaadavaks
 app.use(express.static('public'))
-//hakkame päringuid parsima
-app.use(bodyparser.urlencoded({extended: false}))
+//hakkame päringuid parsima, kui on ainult tekst, siis
+app.use(bodyparser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
     //res.send('Express.js veeb käivitus!')
@@ -414,5 +414,6 @@ app.use('/vanasona', vanasonaRouter)
     }
 })*/
 
-
-app.listen(5322);
+const galleryPhotoUploadRoutes = require('./routes/galleryPhotoUploadRoutes');
+app.use('/galleryphotoupload', galleryPhotoUploadRoutes);
+app.listen(5399);

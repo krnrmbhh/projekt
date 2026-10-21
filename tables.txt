@@ -1,0 +1,2 @@
+Galeriifotode tabel
+CREATE TABLE `if26_karina_rumbahh`.`galleryphotos` (`id` INT(4) NOT NULL AUTO_INCREMENT , `filename` VARCHAR(50) NOT NULL , `origname` VARCHAR(100) NOT NULL , `altext` VARCHAR(256) NULL , `privacy` INT(1) NOT NULL , `userid` INT(4) NOT NULL , `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , `deleted` DATETIME NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;

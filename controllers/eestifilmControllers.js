@@ -30,7 +30,7 @@ const eestifilmInimesed = async (req,res)=>{
         console.log('Andmebaasiga suhtlemise viga' + err)
         res.render('film_inimesed', {personList: []})
     }
-    finally{
+    finally {
         if (conn) {
             await conn.end()
         }

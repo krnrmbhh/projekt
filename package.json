@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/krnrmbhh/projekt#readme",
   "dependencies": {
+    "argon2": "^0.45.2",
     "dotenv": "^18.0.6",
     "ejs": "^7.0.1",
     "express": "^5.2.1",
     "multer": "^2.4.0",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "validator": "^13.15.35"
   }
 }

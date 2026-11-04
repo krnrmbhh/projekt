@@ -82,6 +82,15 @@ app.use('/minulugu',minuluguRouter)
 app.use('/regvisit', regvisitRouter)
 app.use('/eestifilm', eestifilmRouter)
 app.use('/vanasona', vanasonaRouter)
+
+app.get('/home', (req, res) => {
+	res.render('home');
+});
+
+app.get('/logout', (req, res) => {
+	res.redirect('/');
+});
+
 /*app.get('/eestifilm', (req, res) => {
     res.render('eestifilm')
 })*/
@@ -416,4 +425,11 @@ app.use('/vanasona', vanasonaRouter)
 
 const galleryPhotoUploadRoutes = require('./routes/galleryPhotoUploadRoutes');
 app.use('/galleryphotoupload', galleryPhotoUploadRoutes);
+
+const signupRouter = require('./routes/signupRoutes');
+app.use('/signup', signupRouter);
+
+const signinRouter = require('./routes/signinRoutes');
+app.use('/signin', signinRouter);
+
 app.listen(5399);

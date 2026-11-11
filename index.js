@@ -7,6 +7,7 @@ require('dotenv').config() // moodul keskkonna muutujate lugemiseks
 const mysql = require ('mysql2/promise')
 //sessio0oni moodul
 const session= require('express-session');
+const MySQLStore = require('express-mysql-session')(session)
 //käivitan express() funktsiooni ja tähistan töötava asja nimega "app"
 const app = express()
 //määrame sessioonihalduse

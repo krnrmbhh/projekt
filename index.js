@@ -1,9 +1,16 @@
 const express = require('express')
 const dateTimeET = require('./src/dateTimeET.js');
+//sisselogimise kontrollvahevara
+const checkLogin = require('./src/checkLogin');
 const bodyparser = require('body-parser');
 require('dotenv').config() // moodul keskkonna muutujate lugemiseks
+const mysql = require ('mysql2/promise')
+//sessio0oni moodul
+const session= require('express-session');
 //käivitan express() funktsiooni ja tähistan töötava asja nimega "app"
 const app = express()
+//määrame sessioonihalduse
+app.use(session({secret: process.env.SES_SECRET, saveUninitialized: false, resave: true}));
 
 //määrame veebilehe mallide järgi renderdamise mootori (ejs)
 app.set('view engine', 'ejs')
